@@ -1,0 +1,134 @@
+git config --global user.name "bivek"
+git config --global user.email "l3ivkarki@gmail.com"
+git init
+git add file
+git commit -m "meassage here"
+git commit -a [to skip satging area for tracked file]
+git status
+git diff file [check difference]
+git log
+git log -p -2 (last 2)
+git log --stat
+git show (commit_id)
+git commit --ammend --reset-author
+git add -p 
+git diff --staged
+git rm (remove file) --cached -f
+echo .DS_STORE > .gitignore
+git add .gitignore
+git commit -m "Add .gitignore file"
+git mv -v -f -n src dest
+git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+	   [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+	   [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+	   [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+	   [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+	   [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+	   [-S[<keyid>]] [--] [<pathspec>…?]
+git checkout file [revert to last staged/commited snapshot]
+git reset head 
+git restore 
+commits that have already been made public.
+git revert HEAD filename
+git revert HEAD~3
+Revert the changes specified by the fourth last commit in HEAD and create a new commit with the reverted changes.
+git revert -n master~5..master~2
+Revert the changes done by commits from the fifth last commit in master (included) to the third last commit in master (included), but do not create any commit with the reverted changes. The revert only modifies the working tree and the index.
+
+git checkout -- CONTRIBUTING.md (unmodifying modified file)
+
+Branch => a pointer to a particular commit (default => master)
+git branch (create,delete,modify branch)
+git branch new_branch	
+git checkout (for restoring files and switching branches latest one)
+git checkout -b new1 (create and switch to new branch)
+git branch -D new1 (forced delete to unmerged branch)
+git branch -d new_branch
+
+Merging => combing branch,data and history together
+git checkout master
+git merger new1
+Merge conflict => if same part of file is changed in same file in diff. branches
+git merge --abort
+
+git log --graph --oneline
+
+git clone url
+git push (to make changes to remote repo)
+git config --global credential.helper cache
+git pull
+git remote -v
+git remote origin
+git branch -r (readonly branch)
+git fetch (to syn local repo with remote repo)
+git merge origin/matster (remote to local)
+git checkout remote_branch
+
+git remote update (update of all remote branches)
+git push -u origin branch_nane
+git rebase master (branchname) [to avoid three way merge easy to find error linear merge and rebasing commit goesto top]
+git push --delete origin branchname 
+git rebase --skip --abort
+git rebase --continue (to commit without 3 way merge)
+git rebase --onto master server client
+
+
+
+
+
+
+
+
+
+git remote [-v | --verbose]
+git remote add [-t <branch>] [-m <master>] [-f] [--[no-]tags] [--mirror=<fetch|push>] <name> <url>
+git remote rename <old> <new>
+git remote remove <name>
+git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+git remote set-branches [--add] <name> <branch>…?
+git remote get-url [--push] [--all] <name>
+git remote set-url [--push] <name> <newurl> [<oldurl>]
+git remote set-url --add [--push] <name> <newurl>
+git remote set-url --delete [--push] <name> <url>
+git remote [-v | --verbose] show [-n] <name>…?
+git remote prune [-n | --dry-run] <name>…?
+git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…?]
+
+.gitignore
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
